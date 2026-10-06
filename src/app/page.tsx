@@ -1,95 +1,112 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { courseData, NEWS } from "@/lib/data";
+import CourseCard from "@/components/CourseCard";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const latestCourses = [...courseData]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 4);
+  const cL = courseData.filter((r) => r.ty === "lecture").length;
+  const cE = courseData.length - cL;
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="view on">
+      {/* Hero Section */}
+      <div className="hero">
+        <div>
+          <div>
+            <div
+              className="eb"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "8px",
+                lineHeight: "1.4",
+              }}
+            >
+              {/* <span>University Centre of Maghnia</span>
+              <span style={{ opacity: 0.5 }}>•</span>
+              <span>
+                Institute of Economic, Commercial & Management Sciences
+              </span>
+              <span style={{ opacity: 0.5 }}>•</span>
+              <span>2026/2027</span> */}
+            </div>
+            <h1>MACROECONOMICS</h1>
+            <p>
+              Growth, inflation, unemployment and economic policy. Course
+              lectures and practical exercises, all in PDF.
+            </p>
+            <div className="prof">
+              <div className="av">CA</div>
+              <div>
+                <b>Prof. Abderrahim Chibi</b>
+                <span>Professor of Economics</span>
+              </div>
+            </div>
+            <div className="cta">
+              <Link href="/lectures" className="btn gold">
+                Browse Lectures
+              </Link>
+              <Link href="/exercises" className="btn ghost">
+                Exercises
+              </Link>
+            </div>
+          </div>
+          {/* Include your exact Hero SVG here, converting dash to camelCase */}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <div className="wrap">
+        <div className="tiles">
+          <Link href="/lectures" className="tile rv in">
+            <i style={{ background: "#14284b" }}>{/* SVG */}</i>
+            <div>
+              <b>Lectures</b>
+              <span>{cL}</span>
+            </div>
+          </Link>
+          <Link href="/exercises" className="tile rv in">
+            <i style={{ background: "#0f766e" }}>{/* SVG */}</i>
+            <div>
+              <b>Exercises</b>
+              <span>{cE}</span>
+            </div>
+          </Link>
+          <Link href="/library" className="tile rv in">
+            <i style={{ background: "#b8893a" }}>{/* SVG */}</i>
+            <div>
+              <b>All PDFs</b>
+              <span>{courseData.length}</span>
+            </div>
+          </Link>
+        </div>
+
+        <div className="note rv in">
+          <div>
+            <small>{NEWS[0][0]} · Important</small>
+            <br />
+            <b>{NEWS[0][1]}</b> {NEWS[0][2]}
+          </div>
+        </div>
+
+        <div className="sec">
+          <div className="sh">
+            <div>
+              <h2>Latest materials</h2>
+            </div>
+            <Link href="/library">
+              <button className="link">View all →</button>
+            </Link>
+          </div>
+          <div className="cards">
+            {latestCourses.map((course, i) => (
+              <CourseCard key={course.id} item={course} index={i} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
