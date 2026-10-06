@@ -23,7 +23,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-04',
     url: 'https://archive.org/download/macroeconomics-course-syllabus/Macroeconomics%20Course%20Syllabus.pdf',
-    imageUrl: '/assets/iloveimg-resized/Macroeconomics_Course_Syllabus.jpg'
+    imageUrl: '/public/assets/iloveimg-resized/Macroeconomics_Course_Syllabus.jpg'
   },
   {
     id: 2,
