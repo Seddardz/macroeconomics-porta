@@ -44,7 +44,7 @@ export function Header() {
                 <path d="m7 15 4-5 3 3 5-7" />
               </svg>
             </span>
-            Macroeconomics
+            CHIBI-MACROECONOMICS
           </Link>
           <nav className="links">
             <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>

@@ -25,7 +25,7 @@ export default function Home() {
                 lineHeight: "1.4",
               }}
             ></div>
-            <h1>MACROECONOMICS</h1>
+            {/* <h1>MACROECONOMICS</h1> */}
             <p>
               Growth, inflation, unemployment and economic policy. Course
               lectures and practical exercises, all in PDF.
