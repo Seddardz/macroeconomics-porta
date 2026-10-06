@@ -22,7 +22,7 @@ export const courseData: CourseItem[] = [
     topic: 'Introduction',
     s: 'S1',
     date: '2026-09-14',
-    url: 'https://drive.google.com/file/d/1A_abc123/view',
+    url: 'https://archive.org/download/macroeconomics-course-syllabus/Macroeconomics%20Course%20Syllabus.pdf',
     imageUrl: '/assets/lecture-1.jpg'
   },
   {
