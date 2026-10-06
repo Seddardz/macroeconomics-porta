@@ -39,7 +39,7 @@ export default function Home() {
             </div>
             <div className="cta">
               <Link href="/lectures" className="btn gold">
-                Browse Lectures <span>{cL}</span>
+                Lectures <span>{cL}</span>
               </Link>
               <Link href="/exercises" className="btn ghost">
                 Exercises <span>{cE}</span>
