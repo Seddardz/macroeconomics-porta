@@ -15,7 +15,7 @@ export default function Catalogue({
   const [query, setQuery] = useState("");
   const [type, setType] = useState(initialType);
   const [semester, setSemester] = useState("");
-  const [sort, setSort] = useState<"new" | "old">("new");
+  const [sort, setSort] = useState<"new" | "old">("old");
   const [page, setPage] = useState(6);
 
   const filteredData = useMemo(() => {
