@@ -17,7 +17,7 @@ const serif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "Macroeconomics — Prof. Chibi Abderrahim",
-  description: "Macroeconomics lectures and practical exercises.",
+  description: "Macroeconomics lectures and problem sets.",
 };
 
 export default function RootLayout({

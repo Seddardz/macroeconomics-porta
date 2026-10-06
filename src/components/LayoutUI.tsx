@@ -66,7 +66,7 @@ export function Header() {
               href="/exercises"
               aria-current={pathname === "/exercises" ? "page" : undefined}
             >
-              <button>Exercises</button>
+              <button>Practical sets</button>
             </Link>
             <Link
               href="/news"

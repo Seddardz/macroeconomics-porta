@@ -28,7 +28,7 @@ export default function Home() {
             {/* <h1>MACROECONOMICS</h1> */}
             <p>
               Growth, inflation, unemployment and economic policy. Course
-              lectures and practical exercises, all in PDF.
+              lectures and practical problem sets, all in PDF.
             </p>
             <div className="prof">
               <div className="av">CA</div>
@@ -42,7 +42,7 @@ export default function Home() {
                 Lectures <span>{cL}</span>
               </Link>
               <Link href="/exercises" className="btn ghost">
-                Exercises <span>{cE}</span>
+                Problem sets <span>{cE}</span>
               </Link>
             </div>
           </div>

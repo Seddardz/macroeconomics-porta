@@ -90,7 +90,7 @@ export default function Catalogue({
                 aria-pressed={type === "exercise"}
                 onClick={() => setType("exercise")}
               >
-                Exercises
+                Practical sets
               </button>
             </div>
           )}
