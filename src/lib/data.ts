@@ -34,7 +34,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-05',
     url: 'https://archive.org/download/macroeconomics-course-syllabus/Basic%20Concepts%20of%20Macroeconomic%20Analysis%20%28part%201%29.pdf',
-    imageUrl: '/public/assets/iloveimg-resized/Basic_Concepts.jpg'
+    imageUrl: '/assets/iloveimg-resized/Basic_Concepts.jpg'
   },
   // {
   //   id: 3,
@@ -80,7 +80,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-10',
     url: 'https://archive.org/download/macroeconomics-course-syllabus/TD%201%20english%20version.pdf',
-    imageUrl: '/public/assets/iloveimg-resized/td01.jpg'
+    imageUrl: '/assets/iloveimg-resized/td01.jpg'
   },
   // {
   //   id: 7,
