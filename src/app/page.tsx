@@ -24,15 +24,7 @@ export default function Home() {
                 gap: "8px",
                 lineHeight: "1.4",
               }}
-            >
-              {/* <span>University Centre of Maghnia</span>
-              <span style={{ opacity: 0.5 }}>•</span>
-              <span>
-                Institute of Economic, Commercial & Management Sciences
-              </span>
-              <span style={{ opacity: 0.5 }}>•</span>
-              <span>2026/2027</span> */}
-            </div>
+            ></div>
             <h1>MACROECONOMICS</h1>
             <p>
               Growth, inflation, unemployment and economic policy. Course
@@ -47,42 +39,17 @@ export default function Home() {
             </div>
             <div className="cta">
               <Link href="/lectures" className="btn gold">
-                Browse Lectures
+                Browse Lectures <span>{cL}</span>
               </Link>
               <Link href="/exercises" className="btn ghost">
-                Exercises
+                Exercises <span>{cE}</span>
               </Link>
             </div>
           </div>
-          {/* Include your exact Hero SVG here, converting dash to camelCase */}
         </div>
       </div>
 
       <div className="wrap">
-        <div className="tiles">
-          <Link href="/lectures" className="tile rv in">
-            <i style={{ background: "#14284b" }}>{/* SVG */}</i>
-            <div>
-              <b>Lectures</b>
-              <span>{cL}</span>
-            </div>
-          </Link>
-          <Link href="/exercises" className="tile rv in">
-            <i style={{ background: "#0f766e" }}>{/* SVG */}</i>
-            <div>
-              <b>Exercises</b>
-              <span>{cE}</span>
-            </div>
-          </Link>
-          <Link href="/library" className="tile rv in">
-            <i style={{ background: "#b8893a" }}>{/* SVG */}</i>
-            <div>
-              <b>All PDFs</b>
-              <span>{courseData.length}</span>
-            </div>
-          </Link>
-        </div>
-
         <div className="note rv in">
           <div>
             <small>{NEWS[0][0]} · Important</small>
