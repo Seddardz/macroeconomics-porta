@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
+import { ART_SRC } from "@/lib/data";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -82,19 +84,7 @@ export function Header() {
         <div className="wrap">
           <Link href="/" className="brand">
             <span className="logo">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 3v18h18" />
-                <path d="m7 15 4-5 3 3 5-7" />
-              </svg>
+              <Image src={ART_SRC} alt="" fill sizes="38px" unoptimized />
             </span>
             CHIBI-MACROECONOMICS
           </Link>

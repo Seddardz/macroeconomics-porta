@@ -7,6 +7,7 @@ import {
   PROF_PHOTO,
   PROFILE_LINKS,
   TYPE_ICON,
+  UNIVERSITY,
   ART_SRC,
 } from "@/lib/data";
 import CourseCard from "@/components/CourseCard";
@@ -44,14 +45,52 @@ export default function Home() {
         <div>
           <div>
             <div className="prof">
-              <div className="prof-photo">
-                <Image
-                  src={PROF_PHOTO}
-                  alt="Prof. Abderrahim Chibi"
-                  fill
-                  priority
-                  sizes="104px"
-                />
+              <div className="prof-top">
+                <div className="prof-photo">
+                  <Image
+                    src={PROF_PHOTO}
+                    alt="Prof. Abderrahim Chibi"
+                    fill
+                    priority
+                    sizes="104px"
+                  />
+                </div>
+
+                {/* Pulsing SVG (cum.svg) with the university's Facebook behind it */}
+                <a
+                  href={UNIVERSITY.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="beacon"
+                  aria-label={`${UNIVERSITY.name} on Facebook`}
+                  title={`${UNIVERSITY.name} on Facebook`}
+                >
+                  <span className="beacon-ic">
+                    <span className="beacon-circles" aria-hidden="true">
+                      <i className="c1" />
+                      <i className="c2" />
+                      <i className="c3" />
+                    </span>
+                    <span className="beacon-fb">
+                      <Image
+                        src={UNIVERSITY.icon}
+                        alt=""
+                        fill
+                        sizes="20px"
+                        unoptimized
+                      />
+                    </span>
+                    <span className="beacon-main">
+                      <Image
+                        src={ART_SRC}
+                        alt=""
+                        fill
+                        sizes="92px"
+                        unoptimized
+                      />
+                    </span>
+                  </span>
+                </a>
               </div>
               <div className="prof-info">
                 <b>Prof. Abderrahim Chibi</b>
@@ -109,30 +148,17 @@ export default function Home() {
               lectures and practical problem sets, all in PDF.
             </p>
           </div>
-
-          {/* Decorative animated SVG (right side on desktop, corner badge on phones) */}
-          <div className="hero-art" aria-hidden="true">
-            <span className="art-glow" />
-            <span className="art-lines" />
-            <span className="art-orbit" />
-            <span className="art-ring r1" />
-            <span className="art-ring r2" />
-            <span className="art-ring r3" />
-            <div className="art-core">
-              <Image src={ART_SRC} alt="" fill sizes="220px" unoptimized />
-            </div>
-          </div>
         </div>
       </div>
 
       <div className="wrap">
-        <div className="note rv in">
+        {/* <div className="note rv in">
           <div>
             <small>{NEWS[0][0]} · Important</small>
             <br />
             <b>{NEWS[0][1]}</b> {NEWS[0][2]}
           </div>
-        </div>
+        </div> */}
 
         <div className="sec">
           <div className="sh">

@@ -1,5 +1,12 @@
 export const NOW = new Date('2026-10-06');
 
+// University shown in the hero beacon (its Facebook page)
+export const UNIVERSITY = {
+  name: 'University Centre of Maghnia',
+  href: 'https://web.facebook.com/centre.univ.maghnia', // TODO: real page URL
+  icon: 'https://thesvg.org/icons/facebook/default.svg',
+};
+
 // Icons for the two document types (badge on the cover + hero buttons)
 export const TYPE_ICON = {
   lecture: 'https://thesvg.org/icons/bookstack/default.svg',
@@ -19,23 +26,18 @@ export const HERO_BG = '/assets/hero-bg.jpg';
 export const PROFILE_LINKS = [
   {
     name: 'Google Scholar',
-    href: 'https://scholar.google.com/', // TODO: real profile URL
+    href: 'https://scholar.google.com/citations?user=2AyjyKUAAAAJ&hl=en/', // TODO: real profile URL
     icon: 'https://thesvg.org/icons/google-scholar/default.svg',
   },
   {
     name: 'Scopus',
-    href: 'https://www.scopus.com/', // TODO: real author URL
+    href: 'https://www.scopus.com/authid/detail.uri?authorId=57209245561', // TODO: real author URL
     icon: 'https://thesvg.org/icons/scopus/default.svg',
   },
   {
     name: 'ResearchGate',
-    href: 'https://www.researchgate.net/', // TODO: real profile URL
+    href: 'https://www.researchgate.net/profile/Abderrahim-Chibi', // TODO: real profile URL
     icon: 'https://thesvg.org/icons/researchgate/default.svg',
-  },
-  {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/', // TODO: real page URL
-    icon: 'https://thesvg.org/icons/facebook/default.svg',
   },
 ];
 
