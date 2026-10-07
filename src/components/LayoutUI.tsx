@@ -4,6 +4,58 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+const NAV = [
+  { href: "/", label: "Home", d: "M3 11 12 3l9 8v10h-6v-6H9v6H3z" },
+  {
+    href: "/library",
+    label: "Library",
+    d: "M4 5h4v14H4zM10 5h4v14h-4zM16 6l4 1-3 12-4-1z",
+  },
+  {
+    href: "/lectures",
+    label: "Lectures",
+    d: "M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM8 7h7",
+  },
+  {
+    href: "/exercises",
+    label: "Sets",
+    d: "M9 3h6v4H9zM6 5h12v16H6zM9 12h6M9 16h6",
+  },
+  {
+    href: "/news",
+    label: "News",
+    d: "M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-3 0M8 9h5M8 13h5",
+  },
+];
+
+function BottomNav({ pathname }: { pathname: string }) {
+  return (
+    <nav className="bottom" aria-label="Main navigation">
+      {NAV.map((n) => (
+        <Link key={n.href} href={n.href}>
+          <button aria-current={pathname === n.href ? "page" : undefined}>
+            <i>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d={n.d} />
+              </svg>
+            </i>
+            {n.label}
+          </button>
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
 export function Header() {
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
@@ -93,6 +145,7 @@ export function Header() {
           </button>
         </div>
       </header>
+      <BottomNav pathname={pathname} />
     </>
   );
 }

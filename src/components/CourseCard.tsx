@@ -1,6 +1,6 @@
 "use client";
 
-import { CourseItem, NOW } from "@/lib/data";
+import { CourseItem, NOW, TYPE_ICON } from "@/lib/data";
 import Image from "next/image";
 
 export default function CourseCard({
@@ -39,12 +39,20 @@ export default function CourseCard({
         <div className="color-overlay"></div>
 
         <span
-          className={`bdg ${isLecture ? "bl" : "be"}`}
-          // data-i={isLecture ? "📖" : "🧮"}
-          data-i={isLecture ? "📘" : "📖"}
-          style={{ zIndex: 10 }}
+          className="bdg"
+          role="img"
+          aria-label={isLecture ? "Lecture" : "Exercise"}
+          title={isLecture ? "Lecture" : "Exercise"}
         >
-          {isLecture ? "Lecture" : "Exercise"}
+          <i className="bdg-ic">
+            <Image
+              src={TYPE_ICON[item.ty]}
+              alt=""
+              width={30}
+              height={30}
+              unoptimized
+            />
+          </i>
         </span>
 
         {isNew && (
@@ -56,6 +64,7 @@ export default function CourseCard({
 
       {/* Body Section */}
       <div className="bd">
+        <span className="eyebrow">{item.topic}</span>
         <h3>{item.title}</h3>
         <p className="ds">{item.desc}</p>
 

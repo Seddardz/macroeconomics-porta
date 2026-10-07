@@ -1,5 +1,44 @@
 export const NOW = new Date('2026-10-06');
 
+// Icons for the two document types (badge on the cover + hero buttons)
+export const TYPE_ICON = {
+  lecture: 'https://thesvg.org/icons/bookstack/default.svg',
+  exercise: 'https://thesvg.org/icons/format-json-online/default.svg',
+};
+
+// Animated SVG on the right of the hero. File: /public/assets/cum.svg
+export const ART_SRC = '/assets/cum.svg';
+
+// Professor's portrait. Put the file in /public/assets/prof.jpg
+export const PROF_PHOTO = '/assets/prof.jpg';
+
+// Blurred photo behind the hero. Put the file in /public/assets/hero-bg.jpg
+export const HERO_BG = '/assets/hero-bg.jpg';
+
+// Icons under the professor's name. Replace the href values with the real profiles.
+export const PROFILE_LINKS = [
+  {
+    name: 'Google Scholar',
+    href: 'https://scholar.google.com/', // TODO: real profile URL
+    icon: 'https://thesvg.org/icons/google-scholar/default.svg',
+  },
+  {
+    name: 'Scopus',
+    href: 'https://www.scopus.com/', // TODO: real author URL
+    icon: 'https://thesvg.org/icons/scopus/default.svg',
+  },
+  {
+    name: 'ResearchGate',
+    href: 'https://www.researchgate.net/', // TODO: real profile URL
+    icon: 'https://thesvg.org/icons/researchgate/default.svg',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/', // TODO: real page URL
+    icon: 'https://thesvg.org/icons/facebook/default.svg',
+  },
+];
+
 export type CourseItem = {
   id: number;
   ty: 'lecture' | 'exercise';

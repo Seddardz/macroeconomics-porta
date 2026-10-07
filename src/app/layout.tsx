@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Lora, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header, Footer } from "@/components/LayoutUI";
 
-const inter = Inter({
+// Academic pairing: Lora (scholarly serif) for titles, Source Sans 3 for text
+const sans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
 });
-const serif = Source_Serif_4({
+const serif = Lora({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${serif.variable}`}>
+      <body className={`${sans.variable} ${serif.variable}`}>
         <ThemeProvider>
           <Header />
           <main>{children}</main>

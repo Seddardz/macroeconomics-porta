@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { courseData } from "@/lib/data";
 import CourseCard from "@/components/CourseCard";
 
@@ -15,8 +15,12 @@ export default function Catalogue({
   const [query, setQuery] = useState("");
   const [type, setType] = useState(initialType);
   const [semester, setSemester] = useState("");
-  const [sort, setSort] = useState<"new" | "old">("old");
+  const [sort, setSort] = useState<"new" | "old">("new");
   const [page, setPage] = useState(6);
+
+  useEffect(() => {
+    setPage(6);
+  }, [query, type, semester, sort]);
 
   const filteredData = useMemo(() => {
     const list = courseData.filter((r) => {
@@ -129,6 +133,12 @@ export default function Catalogue({
         </div>
 
         <div className="cnt">{filteredData.length} documents</div>
+        {filteredData.length === 0 && (
+          <div className="empty" style={{ marginTop: 14 }}>
+            <b>No documents found</b>
+            Try another keyword or switch semester.
+          </div>
+        )}
         <div className="cards">
           {filteredData.slice(0, page).map((course, i) => (
             <CourseCard key={course.id} item={course} index={i} />
