@@ -17,7 +17,7 @@ export const TYPE_ICON = {
 export const ART_SRC = '/assets/cum.svg';
 
 // Professor's portrait. Put the file in /public/assets/prof.jpg
-export const PROF_PHOTO = '/assets/prof.jpg';
+export const PROF_PHOTO = '/assets/prof2.jpg';
 
 // Blurred photo behind the hero. Put the file in /public/assets/hero-bg.jpg
 export const HERO_BG = '/assets/hero-bg.jpg';

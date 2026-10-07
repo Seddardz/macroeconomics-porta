@@ -22,7 +22,7 @@ export default function CourseCard({
   return (
     <article
       className="card rv in"
-      style={{ transitionDelay: `${(index % 3) * 70}ms` }}
+      style={{ animationDelay: `${(index % 6) * 60}ms` }}
     >
       {/* Cover Section */}
       <div className={`cover ${isLecture ? "lect-bg" : "ex-bg"}`}>

@@ -137,7 +137,7 @@ header .wrap {
   display: flex;
   gap: 2px;
 }
-.links button {
+.links a {
   border: 0;
   background: none;
   padding: 8px 13px;
@@ -146,11 +146,11 @@ header .wrap {
   font-weight: 500;
   cursor: pointer;
 }
-.links button:hover {
+.links a:hover {
   background: var(--soft);
   color: var(--fg);
 }
-.links button[aria-current="page"] {
+.links a[aria-current="page"] {
   background: var(--soft);
   color: var(--fg);
 }
@@ -177,7 +177,7 @@ header .wrap {
   padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px));
   grid-template-columns: repeat(5, 1fr);
 }
-.bottom button {
+.bottom a {
   border: 0;
   background: none;
   display: flex;
@@ -192,10 +192,10 @@ header .wrap {
   border-radius: 12px;
   min-height: 50px;
 }
-.bottom button[aria-current="page"] {
+.bottom a[aria-current="page"] {
   color: var(--fg);
 }
-.bottom button[aria-current="page"] i {
+.bottom a[aria-current="page"] i {
   background: var(--pri);
   color: var(--pfg);
 }
@@ -1335,12 +1335,6 @@ footer .wrap {
   color: var(--fg);
   margin-bottom: 4px;
 }
-.bottom a {
-  display: block;
-}
-.bottom button {
-  width: 100%;
-}
 
 /* ---------- Header logo: the animated SVG ---------- */
 .brand {
@@ -1509,8 +1503,8 @@ footer .wrap {
     padding-top: 28px;
   }
   .prof {
-    --ph: 84px;
-    --bs: clamp(88px, 29vw, 108px); /* size of the pulsing icon */
+    --ph: 92px;
+    --bs: clamp(84px, 26vw, 100px); /* size of the pulsing icon */
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -1524,9 +1518,11 @@ footer .wrap {
   .prof-photo {
     grid-column: 1;
     grid-row: 1;
+    justify-self: start;
+    align-self: center;
   }
   .prof-info {
-    grid-column: 1;
+    grid-column: 1 / -1; /* name, role and icons use the full width under the top line */
     grid-row: 2;
     align-items: flex-start;
   }
@@ -1539,8 +1535,9 @@ footer .wrap {
     align-items: center;
     justify-content: center;
     grid-column: 2;
-    grid-row: 1 / span 2;
-    justify-self: center;
+    grid-row: 1; /* same top line as the photo */
+    justify-self: end;
+    align-self: center;
   }
   .beacon:hover {
     transform: none;
@@ -1628,4 +1625,230 @@ footer .wrap {
 .btn.gold:hover::after,
 .btn.teal:hover::after {
   left: 130%;
+}
+
+/* =========================================================
+   Responsiveness, accessibility and UX improvements
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+}
+.wrap {
+  padding-inline: clamp(14px, 4vw, 24px);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+.sec > h2,
+.sh h2 {
+  font-size: clamp(22px, 2.6vw, 28px);
+}
+
+/* nav items are now real links */
+.links a,
+.link {
+  display: inline-block;
+}
+.links a {
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.links a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--acc);
+  border-radius: 99px;
+}
+
+/* skip link for keyboard users */
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -64px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--pri);
+  color: var(--pfg);
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip:focus {
+  top: calc(10px + env(safe-area-inset-top, 0px));
+}
+
+/* theme toggle: moon in light mode, sun in dark mode */
+.ib .sun {
+  display: none;
+}
+:root[data-theme="dark"] .ib .sun {
+  display: block;
+}
+:root[data-theme="dark"] .ib .moon {
+  display: none;
+}
+.ib:hover {
+  border-color: var(--acc);
+}
+
+/* search: clear button, result bar */
+.search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+.search.has-q button {
+  display: grid;
+  place-items: center;
+}
+.search button:hover {
+  color: var(--fg);
+}
+.cnt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.reset {
+  border: 0;
+  background: none;
+  padding: 2px 0;
+  color: var(--acc);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.sortb svg {
+  flex: none;
+}
+
+/* cards slide in one after another */
+.card.rv.in {
+  animation: cardIn 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* richer footer */
+footer .wrap.foot {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px 24px;
+  align-items: start;
+}
+.foot-brand b {
+  display: block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 16px;
+  color: var(--fg);
+}
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: flex-end;
+}
+.foot-links a:hover {
+  color: var(--acc);
+}
+.foot-copy {
+  grid-column: 1 / -1;
+  padding-top: 12px;
+  border-top: 1px solid var(--bd);
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  footer .wrap.foot {
+    grid-template-columns: 1fr;
+  }
+  .foot-links {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 819px) {
+  /* keep the footer clear of the fixed bottom bar */
+  footer {
+    padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* bigger touch targets on touch screens */
+@media (pointer: coarse) {
+  .chip {
+    min-height: 40px;
+  }
+  .ib {
+    width: 44px;
+    height: 44px;
+  }
+  .bottom a {
+    min-height: 54px;
+  }
+  .prof .social a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* very small phones (320px) */
+@media (max-width: 360px) {
+  .btn {
+    padding-inline: 12px;
+  }
+  .cta {
+    gap: 8px;
+  }
+  .brand {
+    gap: 6px;
+  }
+}
+
+/* landscape phones: the hero must not fill the whole screen */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero > div {
+    min-height: 0;
+  }
+}
+
+/* ---------- Soft white blurred disc under the cum.svg ---------- */
+.beacon-circles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #ffffff 62%,
+    rgba(255, 255, 255, 0.85) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  /* soft shadow so the white disc still stands out on a light sky */
+  box-shadow: 0 6px 22px rgba(10, 20, 42, 0.28);
+  filter: blur(4px);
+  opacity: var(--disc-o, 0.95); /* lower it for a more transparent disc */
+  animation: discBreath 3.2s ease-in-out infinite;
+}
+@keyframes discBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
 }

@@ -165,8 +165,8 @@ export default function Home() {
             <div>
               <h2>Latest materials</h2>
             </div>
-            <Link href="/library">
-              <button className="link">View all →</button>
+            <Link href="/library" className="link">
+              View all →
             </Link>
           </div>
           <div className="cards">

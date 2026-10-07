@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lora, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -19,8 +19,28 @@ const serif = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Macroeconomics — Prof. Chibi Abderrahim",
-  description: "Macroeconomics lectures and problem sets.",
+  title: {
+    default: "Macroeconomics — Prof. Chibi Abderrahim",
+    template: "%s · Macroeconomics",
+  },
+  description:
+    "Macroeconomics lectures and problem sets (PDF) by Prof. Chibi Abderrahim, University Centre of Maghnia.",
+  openGraph: {
+    title: "Macroeconomics — Prof. Chibi Abderrahim",
+    description: "Macroeconomics lectures and problem sets (PDF).",
+    type: "website",
+  },
+};
+
+// viewport-fit=cover lets the bottom bar respect the iPhone safe area
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f7fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1220" },
+  ],
 };
 
 export default function RootLayout({
@@ -33,7 +53,7 @@ export default function RootLayout({
       <body className={`${sans.variable} ${serif.variable}`}>
         <ThemeProvider>
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
