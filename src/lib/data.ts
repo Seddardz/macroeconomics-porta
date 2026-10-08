@@ -23,17 +23,17 @@ export const HERO_BG = '/assets/hero-bg.jpg';
 export const PROFILE_LINKS = [
   {
     name: 'Google Scholar',
-    href: 'https://scholar.google.com/', // TODO: real profile URL
+    href: 'https://scholar.google.com/citations?user=2AyjyKUAAAAJ&hl=en/ ', // TODO: real profile URL
     icon: 'https://thesvg.org/icons/google-scholar/default.svg',
   },
   {
     name: 'Scopus',
-    href: 'https://www.scopus.com/', // TODO: real author URL
+    href: 'https://www.scopus.com/authid/detail.uri?authorId=57209245561', // TODO: real author URL
     icon: 'https://thesvg.org/icons/scopus/default.svg',
   },
   {
     name: 'ResearchGate',
-    href: 'https://www.researchgate.net/', // TODO: real profile URL
+    href: 'https://www.researchgate.net/profile/Abderrahim-Chibi ', // TODO: real profile URL
     icon: 'https://thesvg.org/icons/researchgate/default.svg',
   },
 ];

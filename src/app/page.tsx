@@ -141,14 +141,6 @@ export default function Home() {
       </div>
 
       <div className="wrap">
-        <div className="note rv in">
-          <div>
-            <small>{NEWS[0][0]} · Important</small>
-            <br />
-            <b>{NEWS[0][1]}</b> {NEWS[0][2]}
-          </div>
-        </div>
-
         <div className="sec">
           <div className="sh">
             <div>
