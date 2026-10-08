@@ -4,7 +4,6 @@ import {
   courseData,
   NEWS,
   HERO_BG,
-  PROF_PHOTO,
   PROFILE_LINKS,
   TYPE_ICON,
   UNIVERSITY,
@@ -46,17 +45,7 @@ export default function Home() {
           <div>
             <div className="prof">
               <div className="prof-top">
-                <div className="prof-photo">
-                  <Image
-                    src={PROF_PHOTO}
-                    alt="Prof. Abderrahim Chibi"
-                    fill
-                    priority
-                    sizes="104px"
-                  />
-                </div>
-
-                {/* Pulsing SVG (cum.svg) with the university's Facebook behind it */}
+                {/* Pulsing logo (cum.svg) with the university's Facebook behind it */}
                 <a
                   href={UNIVERSITY.href}
                   target="_blank"
@@ -152,13 +141,13 @@ export default function Home() {
       </div>
 
       <div className="wrap">
-        {/* <div className="note rv in">
+        <div className="note rv in">
           <div>
             <small>{NEWS[0][0]} · Important</small>
             <br />
             <b>{NEWS[0][1]}</b> {NEWS[0][2]}
           </div>
-        </div> */}
+        </div>
 
         <div className="sec">
           <div className="sh">
