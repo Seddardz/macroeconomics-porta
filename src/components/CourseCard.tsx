@@ -11,8 +11,7 @@ export default function CourseCard({
   index: number;
 }) {
   const isLecture = item.ty === "lecture";
-  const isNew =
-    (NOW.getTime() - new Date(item.date).getTime()) / 86400000 <= 14;
+  const isNew = (NOW.getTime() - new Date(item.date).getTime()) / 86400000 <= 7;
   const dateStr = new Date(item.date).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
