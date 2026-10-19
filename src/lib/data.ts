@@ -75,7 +75,7 @@ export const courseData: CourseItem[] = [
     imageUrl: '/assets/iloveimg-resized/Basic_Concepts.jpg'
   },
   {
-    id: 2,
+    id: 3,
     ty: 'lecture',
     title: 'Chapter 1 : Basic Concepts of Macroeconomic Analysis.',
     desc: 'An introduction to economics covering scarcity, resource allocation, economic choices, opportunity cost, and the production possibilities curve.',
@@ -110,7 +110,7 @@ export const courseData: CourseItem[] = [
 
   // EXERCISES (5 Items)
   {
-    id: 3,
+    id: 4,
     ty: 'exercise',
     title: 'Problem set -1-',
     desc: 'Chapter 1 : Basic Concepts of Macroeconomic Analysis.',
@@ -120,18 +120,18 @@ export const courseData: CourseItem[] = [
     url: 'https://archive.org/download/macroeconomics-course-syllabus/TD%201%20english%20version.pdf',
     imageUrl: '/assets/iloveimg-resized/td01.jpg'
   },
-  // {
-  //   id: 7,
-  //   ty: 'exercise',
-  //   title: 'Sheet 2 — Computing Real GDP',
-  //   desc: 'Practical problems on the three GDP approaches and converting nominal GDP to real GDP.',
-  //   topic: 'GDP',
-  //   s: 'S1',
-  //   date: '2026-09-28',
-  //   url: 'https://drive.google.com/file/d/2B_stu901/view',
-  //   imageUrl: '/assets/lecture-1.jpg'
-  // },
-  // {
+  {
+    id: 5,
+    ty: 'exercise',
+    title: 'Problem set -2',
+    desc: 'Chapter 1 : Basic Concepts of Macroeconomic Analysis.',
+    topic: '',
+    s: 'S1',
+    date: '2026-10-19',
+    url: 'https://archive.org/download/td-2-englisg-version/TD2%20englisg%20%20version.pdf',
+    imageUrl: '/assets/iloveimg-resized/td02.jpg'
+  },
+  //{
   //   id: 8,
   //   ty: 'exercise',
   //   title: 'Correction — GDP Sheet 2',
