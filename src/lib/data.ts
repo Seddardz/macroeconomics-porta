@@ -89,7 +89,7 @@ export const courseData: CourseItem[] = [
     id: 6,
     ty: 'lecture',
     title: 'Chapter 2 : Business Cycle and Economic Activity Measurement',
-    desc: 'Money creation, central banking operations, policy rates, and monetary transmission channels.',
+    desc: 'Economic indicators, the circular flow of income, and business cycle phases.',
     topic: 'Part 1',
     s: 'S1',
     date: '2026-10-20',
