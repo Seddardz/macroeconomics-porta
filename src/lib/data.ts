@@ -85,17 +85,17 @@ export const courseData: CourseItem[] = [
     url: 'https://archive.org/download/basic-concepts-of-macroeconomic-analysis-part-2/Basic%20Concepts%20of%20Macroeconomic%20Analysis%20%28part%202%29.pdf',
     imageUrl: '/assets/iloveimg-resized/Basic_Concepts.jpg'
   },
-  // {
-  //   id: 4,
-  //   ty: 'lecture',
-  //   title: 'Monetary Policy Fundamentals',
-  //   desc: 'Money creation, central banking operations, policy rates, and monetary transmission channels.',
-  //   topic: 'Monetary Policy',
-  //   s: 'S2',
-  //   date: '2026-02-10',
-  //   url: 'https://drive.google.com/file/d/1D_jkl012/view',
-  //   imageUrl: '/assets/lecture-1.jpg'
-  // },
+  {
+    id: 6,
+    ty: 'lecture',
+    title: 'Chapter 2 : Business Cycle and Economic Activity Measurement',
+    desc: 'Money creation, central banking operations, policy rates, and monetary transmission channels.',
+    topic: 'Part 1',
+    s: 'S1',
+    date: '2026-10-20',
+    url: 'https://archive.org/download/business-cycle-and-economic-activity-measurement-part-1/Business%20Cycle%20and%20Economic%20Activity%20Measurement%20%28part%201%29.pdf',
+    imageUrl: '/assets/iloveimg-resized/Businesscycle.jpg'
+  },
   // {
   //   id: 5,
   //   ty: 'lecture',
@@ -123,8 +123,8 @@ export const courseData: CourseItem[] = [
   {
     id: 5,
     ty: 'exercise',
-    title: 'Problem set -2',
-    desc: 'Chapter 1 : Basic Concepts of Macroeconomic Analysis.',
+    title: 'Problem set -2-',
+    desc: 'Chapter 2 : Business Cycle and Economic Activity Measurement',
     topic: '',
     s: 'S1',
     date: '2026-10-19',
