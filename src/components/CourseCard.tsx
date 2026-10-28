@@ -1,6 +1,8 @@
 "use client";
 
-import { CourseItem, NOW, TYPE_ICON } from "@/lib/data";
+// import { CourseItem, NOW, TYPE_ICON } from "@/lib/data";
+import { CourseItem, TYPE_ICON } from "@/lib/data";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function CourseCard({
@@ -11,7 +13,25 @@ export default function CourseCard({
   index: number;
 }) {
   const isLecture = item.ty === "lecture";
-  const isNew = (NOW.getTime() - new Date(item.date).getTime()) / 86400000 <= 6;
+  // const isNew = (NOW.getTime() - new Date(item.date).getTime()) / 86400000 <= 6;
+  const [isNew, setIsNew] = useState(false);
+
+  useEffect(() => {
+    const checkIsNew = () => {
+      const ageMs = Date.now() - new Date(item.date).getTime();
+
+      setIsNew(
+        Number.isFinite(ageMs) &&
+          ageMs >= 0 &&
+          ageMs <= 6 * 24 * 60 * 60 * 1000,
+      );
+    };
+
+    checkIsNew();
+
+    const interval = window.setInterval(checkIsNew, 60_000);
+    return () => window.clearInterval(interval);
+  }, [item.date]);
   const dateStr = new Date(item.date).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",

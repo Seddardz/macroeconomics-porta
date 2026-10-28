@@ -96,6 +96,17 @@ export const courseData: CourseItem[] = [
     url: 'https://archive.org/download/business-cycle-and-economic-activity-measurement-part-1/Business%20Cycle%20and%20Economic%20Activity%20Measurement%20%28part%201%29.pdf',
     imageUrl: '/assets/iloveimg-resized/Businesscycle.jpg'
   },
+    {
+    id: 7,
+    ty: 'lecture',
+    title: 'Chapter 2 : Business Cycle and Economic Activity Measurement',
+    desc: 'Economic indicators, the circular flow of income, and business cycle phases.',
+    topic: 'Part 2',
+    s: 'S1',
+    date: '2026-10-28',
+    url: 'https://archive.org/download/methods-for-measuring-gross-domestic-product/Methods%20for%20measuring%20Gross%20Domestic%20Product.pdf',
+    imageUrl: '/assets/iloveimg-resized/Businesscycle.jpg'
+  },
   // {
   //   id: 5,
   //   ty: 'lecture',
