@@ -61,7 +61,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-04',
     url: 'https://archive.org/download/macroeconomics-course-syllabus/Macroeconomics%20Course%20Syllabus.pdf',
-    imageUrl: '/assets/iloveimg-resized/Macroeconomics_Course_Syllabus.jpg'
+    imageUrl: '/assets/iloveimg-resized/0.jpg'
   },
   {
     id: 2,
@@ -72,7 +72,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-05',
     url: 'https://archive.org/download/basic-concepts-of-macroeconomic-analysis-part-2/Basic%20Concepts%20of%20Macroeconomic%20Analysis%20%28part%201%29.pdf',
-    imageUrl: '/assets/iloveimg-resized/Basic_Concepts.jpg'
+    imageUrl: '/assets/iloveimg-resized/c1-p1.jpg'
   },
   {
     id: 3,
@@ -83,7 +83,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-12',
     url: 'https://archive.org/download/basic-concepts-of-macroeconomic-analysis-part-2/Basic%20Concepts%20of%20Macroeconomic%20Analysis%20%28part%202%29.pdf',
-    imageUrl: '/assets/iloveimg-resized/Basic_Concepts.jpg'
+    imageUrl: '/assets/iloveimg-resized/c1-p2.jpg'
   },
   {
     id: 6,
@@ -94,18 +94,18 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-20',
     url: 'https://archive.org/download/business-cycle-and-economic-activity-measurement-part-1/Business%20Cycle%20and%20Economic%20Activity%20Measurement%20%28part%201%29.pdf',
-    imageUrl: '/assets/iloveimg-resized/Businesscycle.jpg'
+    imageUrl: '/assets/iloveimg-resized/c2-p1.jpg'
   },
     {
     id: 7,
     ty: 'lecture',
     title: 'Chapter 2 : Business Cycle and Economic Activity Measurement',
-    desc: 'Economic indicators, the circular flow of income, and business cycle phases.',
+    desc: 'Methods of GDP Measurement and National Income Accounting: Key Concepts and Analytical Approaches.',
     topic: 'Part 2',
     s: 'S1',
     date: '2026-10-28',
     url: 'https://archive.org/download/methods-for-measuring-gross-domestic-product/Methods%20for%20measuring%20Gross%20Domestic%20Product.pdf',
-    imageUrl: '/assets/iloveimg-resized/Businesscycle.jpg'
+    imageUrl: '/assets/iloveimg-resized/c2-p2.jpg'
   },
   // {
   //   id: 5,
@@ -129,7 +129,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-10',
     url: 'https://archive.org/download/macroeconomics-course-syllabus/TD%201%20english%20version.pdf',
-    imageUrl: '/assets/iloveimg-resized/td01.jpg'
+    imageUrl: '/assets/iloveimg-resized/ps1.jpg'
   },
   {
     id: 5,
@@ -140,7 +140,7 @@ export const courseData: CourseItem[] = [
     s: 'S1',
     date: '2026-10-19',
     url: 'https://archive.org/download/td-2-englisg-version/TD2%20englisg%20%20version.pdf',
-    imageUrl: '/assets/iloveimg-resized/td02.jpg'
+    imageUrl: '/assets/iloveimg-resized/ps2.jpg'
   },
   //{
   //   id: 8,
